@@ -1,4 +1,4 @@
-// School Management System with Text-to-Speech Alerts
+// School Management System with Text-to-Speech
 const schoolData = {
     name: "Mehmoodia Public School",
     students: [],
@@ -8,7 +8,7 @@ const schoolData = {
 function speakAlert(text) {
     if ('speechSynthesis' in window) {
         const utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = 'en-US'; // You can change to 'ur-PK' if supported
+        utterance.lang = 'en-US'; 
         window.speechSynthesis.speak(utterance);
     }
 }
@@ -37,7 +37,7 @@ function triggerAutomatedAlert(student, type) {
     if (type === "WELCOME") {
         alertMessage = `Welcome ${student.name} to ${schoolData.name}.`;
     } else if (type === "FEE_DUE") {
-        alertMessage = `Reminder for ${student.name}'s parents, school fees are due.`;
+        alertMessage = `Reminder for ${student.name}'s parents, school fee is due.`;
     } else if (type === "ABSENT") {
         alertMessage = `Alert: ${student.name} is marked absent today.`;
     }
@@ -58,5 +58,7 @@ appendLog("System Initialized.");
 registerStudent("S001", "Ayesha Khan", "9th", "03001234567");
 registerStudent("S002", "Bilal Ahmed", "10th", "03007654321");
 markAttendance("S002", "Absent");
+
+
 
 
