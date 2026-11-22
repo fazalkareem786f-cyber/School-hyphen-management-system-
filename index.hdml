@@ -1,1 +1,61 @@
-H1 school management system 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Management System</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; }
+        input { width: 100%; padding: 8px; box-sizing: border-box; }
+        button { padding: 10px 15px; background-color: #007bff; color: white; border: none; cursor: pointer; }
+        #log-container { margin-top: 20px; border-top: 1px solid #ccc; padding-top: 10px; }
+        #app-logs p { margin: 5px 0; font-family: monospace; }
+    </style>
+</head>
+<body>
+
+    <h1>Mehmoodia Public School Management</h1>
+
+    <div class="form-group">
+        <label for="student-id">Student ID:</label>
+        <input type="text" id="student-id" placeholder="e.g. S001">
+    </div>
+    <div class="form-group">
+        <label for="student-name">Full Name:</label>
+        <input type="text" id="student-name" placeholder="e.g. Ayesha Khan">
+    </div>
+    <div class="form-group">
+        <label for="student-grade">Grade:</label>
+        <input type="text" id="student-grade" placeholder="e.g. 9th">
+    </div>
+    <div class="form-group">
+        <label for="parent-phone">Parent Phone:</label>
+        <input type="text" id="parent-phone" placeholder="e.g. 03001234567">
+    </div>
+    <button onclick="handleRegistration()">Register Student</button>
+
+    <div id="log-container">
+        <h3>System Logs</h3>
+        <div id="app-logs"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function handleRegistration() {
+            const id = document.getElementById('student-id').value;
+            const name = document.getElementById('student-name').value;
+            const grade = document.getElementById('student-grade').value;
+            const phone = document.getElementById('parent-phone').value;
+
+            if(id && name && grade && phone) {
+                registerStudent(id, name, grade, phone);
+            } else {
+                alert("Please fill all fields.");
+            }
+        }
+    </script>
+</body>
+</html>
+
